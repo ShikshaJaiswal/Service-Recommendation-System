@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+    background-color: #303030;;
+    z-index: 9999;
+    border: 0;
+    font-size: 14px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    
+    }
+    .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color:#ffae42 !important;
+    background-color: #303030 !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: black;
+    color: #fff !important;
+  }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 600px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    .panel-footer {
+    background-color: lightgrey !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .footer{
+    background: lightgrey;
+  }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+	.box:hover{
+        background: blue; /* make this whatever you want */
+       }
+       
+  </style>
+</head>
+<body id="myPage">
+
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">  
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>     
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left" style="padding-left:130px;">
+            <li class="nav-item"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="result.html"><span class="fa fa-product-hunt fa-lg"></span>Products</a></li>
+            <li class="nav-item active"><a class="nav-link" href="services.html"><span class="fa fa-user-circle-o fa-lg" >Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#solutions"><span  class="fa fa-thumbs-o-up fa-lg"></span>Solutions</a></li>
+            <li class="nav-item"><a class="nav-link" href="#support"><span class="fa fa-life-ring fa-lg"></span>Support</a></li>
+            <li class="nav-item"><a class="nav-link" href="#community"><span class="fa fa-users fa-lg"></span>Community</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<div id="services" class="container-fluid text-center" style="padding-top:50px; padding-bottom: 50px;">
+    <h2>Available Services</h2>
+    <hr style="border: 2px solid #ffae42; width:120px; margin-left: 579px;" >
+    <div class="row slideanim"style="padding-top:50px; padding-bottom: 50px;">
+      <div class="col-sm-4">
+        <span style="color: #06168C;" class="fa fa-adjust fa-lg"></span>
+        <h3>Operating System Issues</h3>
+      
+        <a href="#" style="color:lightslategrey;">Operating System won't boot.</a><br>
+        <a href="#" style="color:lightslategrey;">Abnormally functioning Operating System.</a><br>
+        <a href="#" style="color:lightslategrey;">Others.</a><br>
+      </div>
+      <div class="col-sm-4">
+        <span style="color: #06168C;" class="fa fa-battery-three-quarters fa-lg"></span>
+        <h3>Battery Issues</h3>
+        <a href="#" style="color:lightslategrey;">Plugged in but not charging problem.</a><br>
+        <a href="#" style="color:lightslategrey;">Battery is not recognized by PC.</a><br>
+        <a href="#" style="color:lightslategrey;">Battery charge is stuck at a certain percentage.</a><br>
+        <a href="#"style="color:lightslategrey;">Others.</a><br>
+      </div>
+      <div class="col-sm-4">
+        <span style="color: #06168C;" class="fa fa-laptop fa-lg"></span>
+        <h3>Touchscreen Issues</h3>
+          <a href="#" style="color:lightslategrey;">Touchscreen not responding.</a><br>
+          <a href="#" style="color:lightslategrey;">Touchscreen responds late or inaccurately.</a><br>
+          <a href="#" style="color:lightslategrey;">Others.</a><br>
+      </div>
+    </div>
+    <br><br>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <span style="color: #06168C;" class="fa fa-usb fa-lg"></span>
+        <h3>USB Port Issues</h3>
+    
+        <a href="#" style="color:lightslategrey;">External devices not detected.</a><br>
+        <a href="#" style="color:lightslategrey;">Battery charge is stuck at a certain percentage.</a><br>
+        <a href="#" style="color:lightslategrey;">Others.</a><br>
+      </div>
+      <div class="col-sm-4">
+        <span style="color: #06168C;" class="fa fa-file-audio-o fa-lg"></span>
+        <h3>Speaker Issues</h3>
+        
+          <a href="#" style="color:lightslategrey;">Speakers not working.</a><br>
+          <a href="#" style="color:lightslategrey;">Speakers making crackling sound.</a><br>
+          <a href="#" style="color:lightslategrey;">Others.</a><br>
+      </div>
+      <div class="col-sm-4">
+        <span style="color: #06168C;" class="fa fa-hand-rock-o fa-lg"></span>
+        <h3>Touchpad Issues</h3>
+        
+        <a href="#" style="color:lightslategrey;">Cursor movement is not smooth.</a><br>
+        <a href="#" style="color:lightslategrey;">Buttons not working on touchpad.</a><br>
+        <a href="#" style="color:lightslategrey;" >Others.</a><br>
+      </div>
+    </div>
+    <br><br>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+          <span style="color: #06168C;" class="fa fa-headphones fa-lg"></span>
+          <h3>Headphone Jack Issues</h3>
+            
+          <a href="#" style="color:lightslategrey;" >Headphone not detected.</a><br>
+          <a href="#" style="color:lightslategrey;">Laptop stuck in headphone mode.</a><br>
+          <a href="#" style="color:lightslategrey;">Others.</a><br>
+        </div>
+        <div class="col-sm-4">
+            <span style="color: #06168C;" class="fa fa-microchip fa-lg"></span>
+            <h3>SD Card Reader Issues</h3>
+        
+            <a href="#" style="color:lightslategrey;">SD Card not detected.</a><br>
+            <a href="#" style="color:lightslategrey;">SD Card not working.</a><br>
+            <a href="#" style="color:lightslategrey;">Others.</a><br>
+            
+          </div>
+          <div class="col-sm-4">
+              <span style="color: #06168C;" class="fa fa-television fa-lg"></span>
+              <h3>Display Issues</h3>
+          <a href="#" style="color:lightslategrey;">Laptop screen black but still running.</a><br>
+          <a href="#" style="color:lightslategrey;" >Multi coloured lines on screening.</a><br>
+          <a href="#" style="color:lightslategrey;">Shutting down repetedly.</a><br>
+          <a href="#" style="color:lightslategrey;">Cracked Screen.</a><br>
+          <a href="#" style="color:lightslategrey;">Laptop doesn't turn on.</a><br>
+        <a href="#" style="color:lightslategrey;">Others.</a><br>
+            </div>
+    </div>
+    <br>
+    <br>
+    <div class="row slideanim">
+            <div class="col-sm-4">
+                <span style="color: #06168C;" class="fa fa-keyboard-o fa-lg"></span>
+                <h3>Keyboard Issues</h3>
+                <a href="#" style="color:lightslategrey;">Laptop key(s) not working.</a><br>
+                <a href="#" style="color:lightslategrey;">Computer beeps while typing.</a><br>
+                <a href="#" style="color:lightslategrey;">Keyboard keys slow to respond.</a><br>
+                <a href="#" style="color:lightslategrey;">Wrong characters appear when typing.</a><br>
+                <a href="#" style="color:lightslategrey;">Multiple characters appear when key is pressed once.</a><br>
+                <a href="#" style="color:lightslategrey;">Others.</a>
+              </div>
+    </div>
+  </div>
+  
+<footer class="footer">
+    <div id="contact" class="container-fluid bg-grey">
+     
+      <div class="row">             
+          <div class="col-7 offset-1 col-sm-2" style="padding-top:40px; padding-left: 180px;">
+            <h3>Links</h3>
+            <hr style="border: 2px solid #ffae42; width:50px; margin-left: 1px;" >
+            <ul class="list-unstyled">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./result.html">Products</a></li>
+              <li><a href="./services.html">Services</a></li>
+              <li><a href="#">Solutions</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Community</a></li>
+          </ul>
+      </div>
+      <div class="col-4 col-sm-5" style="padding-top:40px; padding-left: 180px;">
+          <h3>Our Address</h3>
+          <hr style="border: 2px solid #ffae42; width:130px; margin-left:3px;" >
+          <address>
+        218, Manipal University Jaipur,<br>
+        Dehmi Kalan, Jaipur,<br>
+        Rajasthan<br>
+        <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+        <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+        <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:shubhiksha.jaiswal@gmail.com">shubhiksha.jaiswal@gmail.com</a>
+     </address>
+      </div>
+      <div class="col-12 col-sm-4 align-self-center slideanim"  style="padding-top:40px;">
+            <div class="col-sm-6 col-lg-6 form-group"></div>
+                <h3>Contact Us</h3>
+                <hr style="border: 2px solid #ffae42; width:125px; margin-left: 2px;" >
+                
+                  <input class="form-control col-lg-4" id="name" name="name" placeholder="Name" type="text" required>
+            
+                  <input class="form-control col-lg-4" id="email" name="email" placeholder="Email" type="email" required>
+            
+                  <textarea class="form-control col-lg-6" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+          
+            <div class="col-sm-12 form-group" style="padding-top:5px; padding-left:0px;">
+              <button class="btn btn-warning pull-left" type="submit" style="color:black; width: 170px;">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"style="padding-left:640px; padding-top:20px;"></span>
+      </a>
+      
+      <div class="row justify-content-center">             
+          <div style="text-align:center;">
+              <p><b>© Copyright 2019 Service Recommendation System</b></p>
+          </div>
+     </div>
+    </footer>
+<script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+      
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+    
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+        });
+      });
+    })
+    </script>
+
+</body>
+</html>

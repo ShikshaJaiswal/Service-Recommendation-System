@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Recommendation Results</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+     body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+    margin-bottom: 0;
+    background-color: #303030;;
+    z-index: 9999;
+    border: 0;
+    font-size: 14px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color:#ffae42 !important;
+    background-color: #303030 !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: black;
+    color: #fff !important;
+  }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color:#aaa;
+      height: 100%;
+      color: black;
+    }
+    
+    /* Set black background color, white text and some padding */
+    .panel-footer {
+    background-color: lightgrey !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .footer{
+    background: lightgrey;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    <style>
+        .star{
+          color: goldenrod;
+          font-size: 2.0rem;
+          padding: 0 1rem; /* space out the stars */
+        }
+        .star::before{
+          content: '\2606';    /* star outline */
+          cursor: pointer;
+        }
+        .star.rated::before{
+          /* the style for a selected star */
+          content: '\2605';
+          color: #ffae42;/* filled star */
+        }
+        
+        .stars{
+            counter-reset: rateme 0;   
+            font-size: 2.0rem;
+            font-weight: 900;
+        }
+        .star.rated{
+            counter-increment: rateme 1;
+        }
+        .stars::after{
+            content: counter(rateme) '/5';
+        }
+    </style>
+  </style>
+</head>
+<body id="myPage">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left" style="padding-left:130px;">
+        <li class="nav-item"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+        <li><a href="#"><span  class="fa fa-codepen fa-lg"></span>Knowledge Base</a></li>
+        <li><a href="#"><span  class="fa fa-chrome fa-lg"></span>Warranty and Contracts</a></li>
+        <li><a href="#"><span class="fa fa-superpowers fa-lg"></span>Service Requests</a></li>       
+      
+        <li><a href="index.html#contact"><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">	
+    <div class="col-sm-2 sidenav"style="padding-top:90px; text-align:left;" >
+      <p><a style="color:black;" href="#">Product Recommender</a></p>
+      <p><a style="color:black;"href="#">Data Centres</a></p>
+      <p><a style="color:black;"href="#">Cloud Services</a></p>
+    </div>
+    <div class="col-sm-8 text-left" style="padding-top:50px;"> 
+      <h2>Recommended Services for you</h2>
+      <h4><a href="services.html#{{a}}">Issue related to {{a}}</a></h4>
+      <h4><a href="services.html#{{b}}">Issue related to {{b}}</a></h4>
+      <h4><a href="services.html#{{c}}">Issue related to {{c}}</a></h4>
+      <hr>
+      <h3>Rate Us</h3>
+      <p>Tell us how helpful our recommendations were to you.</p>
+      <div class="stars" data-rating="0">
+        <span class="star">&nbsp;</span>
+        <span class="star">&nbsp;</span>
+        <span class="star">&nbsp;</span>
+        <span class="star">&nbsp;</span>
+        <span class="star">&nbsp;</span>
+    </div> 
+    <script>
+        
+        //initial setup
+        document.addEventListener('DOMContentLoaded', function(){
+            let stars = document.querySelectorAll('.star');
+            stars.forEach(function(star){
+                star.addEventListener('click', setRating); 
+            });
+            
+            let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+            let target = stars[rating - 1];
+            target.dispatchEvent(new MouseEvent('click'));
+        });
+        function setRating(ev){
+            let span = ev.currentTarget;
+            let stars = document.querySelectorAll('.star');
+            let match = false;
+            let num = 0;
+            stars.forEach(function(star, index){
+                if(match){
+                    star.classList.remove('rated');
+                }else{
+                    star.classList.add('rated');
+                }
+                //are we currently looking at the span that was clicked
+                if(star === span){
+                    match = true;
+                    num = index + 1;
+                }
+            });
+            document.querySelector('.stars').setAttribute('data-rating', num);
+        }
+        
+    </script>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+    <div id="contact" class="container-fluid bg-grey">
+     
+      <div class="row">             
+          <div class="col-7 offset-1 col-sm-2" style="padding-top:40px; padding-left: 180px;">
+            <h3>Links</h3>
+            <hr style="border: 2px solid #ffae42; width:50px; margin-left: 1px;" >
+            <ul class="list-unstyled">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./result.html">Products</a></li>
+              <li><a href="./services.html">Services</a></li>
+              <li><a href="#">Solutions</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Community</a></li>
+          </ul>
+      </div>
+      <div class="col-4 col-sm-5" style="padding-top:40px; padding-left: 180px;">
+          <h3>Our Address</h3>
+          <hr style="border: 2px solid #ffae42; width:130px; margin-left:3px;" >
+          <address>
+        218, Manipal University Jaipur,<br>
+        Dehmi Kalan, Jaipur,<br>
+        Rajasthan<br>
+        <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+        <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+        <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:shubhiksha.jaiswal@gmail.com">shubhiksha.jaiswal@gmail.com</a>
+     </address>
+      </div>
+      <div class="col-12 col-sm-4 align-self-center slideanim"  style="padding-top:40px;">
+            <div class="col-sm-6 col-lg-6 form-group"></div>
+                <h3>Contact Us</h3>
+                <hr style="border: 2px solid #ffae42; width:125px; margin-left: 2px;" >
+                
+                  <input class="form-control col-lg-4" id="name" name="name" placeholder="Name" type="text" required>
+            
+                  <input class="form-control col-lg-4" id="email" name="email" placeholder="Email" type="email" required>
+            
+                  <textarea class="form-control col-lg-6" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+          
+            <div class="col-sm-12 form-group" style="padding-top:5px; padding-left:0px;">
+              <button class="btn btn-warning pull-left" type="submit" style="color:black; width: 170px;">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"style="padding-left:640px; padding-top:20px;"></span>
+      </a>
+      
+      <div class="row justify-content-center">             
+          <div style="text-align:center;">
+              <p><b>© Copyright 2019 Service Recommendation System</b></p>
+          </div>
+     </div>
+    </footer>
+</body>
+</html>
